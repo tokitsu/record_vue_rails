@@ -1,6 +1,6 @@
-# recordstore-front
+# recordstore
 
-> Vue Rails
+> vue.js rails api
 
 ## Build Setup
 
