@@ -1,5 +1,5 @@
 class SigninController < ApplicationController
-  before_action :authorized_access_request!, only: [:destroy]
+  before_action :authorize_access_request!
 
   def create
     user = User.find_by(email: params[:email])
@@ -16,6 +16,7 @@ class SigninController < ApplicationController
     else
       not_authorized
     end
+  end
 
   def destroy
     session = JWTSessions::Session.new(payload: payload)
@@ -29,3 +30,4 @@ class SigninController < ApplicationController
     render json: { error: "Cannot find email/password combination"}, status: :not_found
   end
 end
+
