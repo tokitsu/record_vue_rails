@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_06_28_045350) do
   end
 
   create_table "records", force: :cascade do |t|
-    t.string "tilte"
+    t.string "title"
     t.string "year"
     t.integer "artist_id", null: false
     t.integer "user_id", null: false
