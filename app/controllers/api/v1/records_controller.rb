@@ -18,10 +18,10 @@ module Api
 
       # POST /records
       def create
-        @record = current_user.record.new(record_params)
+        @record = current_user.records.build(record_params)
 
         if @record.save
-          render json: @record, status: :created, location: @record
+          render json: @record, status: :created
         else
           render json: @record.errors, status: :unprocessable_entity
         end
